@@ -1,0 +1,333 @@
+main {
+    .some-product-mob {
+        width: 180px;
+    }
+    .all-otlivants {
+        margin-bottom: 46px;
+        h3 {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 30px;
+            color: #111111;
+        }
+        .link-otlivants {
+            text-align: center;
+            a {
+                margin-top: 31px;
+                display: inline-block;
+                font-size: 18px;
+                color: #471f7e;
+                text-decoration: underline;
+            }
+        }
+    }
+    .why-we-block {
+        margin-bottom: 84px;
+        .mob-why-we-all {
+            .slide-we {
+                .slick-prev {
+                    left: 80px;
+                }
+                .slick-next {
+                    right: 80px;
+                }
+            }
+        }
+    }
+    .products {
+        width: 100%;
+        .mob-vers {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .desc-vers {
+            display: none;
+        } 
+    }
+    .haveAsk-block {
+        margin-top: 56px;
+        background: url('../img/bg-haveAsk.png') no-repeat;
+        background-size: cover;
+        padding-top: 73px;
+        padding-bottom: 79px;
+            h4 {
+                font-size: 30px;
+                color: #ffffff;
+                font-family: 'ProximaNova-Bold';
+                text-align: center;
+                margin-bottom: 40px;
+                @media screen and (min-width: 1024px){
+                    font-size: 36px;
+                }
+            }
+            form {
+                .top-block {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                        input {
+                            display: inline-block;
+                            width: 398px;
+                            max-width: 100%;
+                            margin: 0 auto;
+                            height: 45px;
+                            border-radius: 7px;
+                            border: 1px solid #ebebeb;
+                            background-color: #ffffff;
+                            text-align: center;
+                            font-size: 18px;
+                            color: #000000;
+                            margin-bottom: 27px;
+                        }
+                    .textarea-block {
+                        width: 884px;
+                        max-width: 100%;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: column;
+                        textarea {
+                            resize: none;
+                            display: inline-block;
+                            width: 100%;
+                            height: 151px;
+                            border-radius: 7px;
+                            border: 1px solid #ebebeb;
+                            background-color: #ffffff;
+                            font-size: 18px;
+                            color: #000000;
+                            text-align: center;
+                            padding-top: 13px;
+                        }
+                        .bot-block {
+                            text-align: center;
+                            .check {
+                                width: 208px;
+                                margin: 0 auto;
+                                margin-top: 33px;
+                                display: flex;
+                                align-items: flex-start;
+                                justify-content: center;
+                                    input {
+                                        width: 30px;
+                                        height: 30px;
+                                        margin-right: 15px;
+                                        margin-bottom: 0;
+                                        padding-left: 0;
+                                    }
+                                    label {
+                                        font-size: 16px;
+                                        color: #fffefe;
+                                            span {
+                                                cursor: pointer;
+                                                text-decoration: underline;
+                                            }
+                                    }
+                                    @media screen and (min-width: 425px){
+                                      width: 374px;
+                                        input {
+                                          width: 20px;
+                                          height: 20px;
+                                          margin-right: 10px;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                    .add-file {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 398px;
+                        max-width: 100%;
+                        margin: 0 auto;
+                        margin-top: 38px;
+                            a {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 11px;
+                                img {
+                                    width: 19px;
+                                    height: 18px;
+                                    margin-right: 9px;
+                                }
+                                p {
+                                    font-size: 16px;
+                                    color: #ffffff;
+                                }
+                            }
+                        div {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 9px;
+                            img {
+                                width: 48px;
+                                height: 36px;
+                                margin-right: 18px;
+                            }
+                            p {
+                                font-size: 16px;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+                button {
+                    width: 200px;
+                    height: 45px;
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 27px;
+                    background-color: #ecbeb9;
+                    border: 0;
+                    font-size: 16px;
+                    letter-spacing: 3.2px;
+                    text-transform: uppercase;
+                    color: #000000;
+                    font-family: 'ProximaNova-Bold';
+                }
+            }
+            .form-file {
+                input {
+                    display: none !important;
+                }
+                label {
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: 'ProximaNova-Bold';
+                    color: #ecbeb9;
+                    font-size: 16px;
+                    line-height: 22px;
+                    text-decoration: underline;
+                    margin-top: 37px;
+                }
+            }
+    }
+    .add-file {
+        display: flex;
+        align-items: center;
+        margin-top: 37px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 320px;
+            img {
+                margin-left: 30px;
+            }
+            p {
+                color: #fff;
+                width: 100%;
+                margin-top: 30px;
+            }
+    }
+}
+@media screen and (min-width: 1220px){
+    main {
+        .haveAsk-block {
+            form {
+                .top-block {
+                    input {
+                        text-align: left;
+                        padding-left: 70px;
+                        margin: 0;
+                        margin-bottom: 46px;
+                    }
+                    .textarea-block {
+                        textarea {
+                            text-align: left;
+                            padding-left: 70px;
+                            padding-top: 25px;
+                        }
+                        .bot-block {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 34px;
+                                .check {
+                                    margin: 0;
+                                    margin-right: 226px;
+                                }
+                        }
+                    }
+                }
+            }
+            .form-file {
+                label {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1312px){
+    main {
+        .haveAsk-block {
+            position: relative;
+            form {
+                .top-block {
+                    .textarea-block {
+                        margin: 0;
+                    }
+                    .add-file {
+                        margin-top: 0;
+                        margin: 0;
+                        margin-left: 15px;
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+        .add-file {
+            display: flex;
+            align-items: center;
+            margin-top: 37px;
+            flex-wrap: wrap;
+            position: absolute;
+            right: 190px;
+            top: 210px;
+                img {
+                    margin-left: 30px;
+                }
+                p {
+                    color: #fff;
+                    width: 100%;
+                    margin-top: 30px;
+                }
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    main {
+        .all-otlivants {
+            h3 {
+                margin-bottom: 69px;
+            }
+            p {
+                &:nth-child(2){
+                    margin-bottom: 30px;
+                }
+            }
+            .link-otlivants {
+                display: none;
+            }
+        }
+        .products {
+            width: 100%;
+            .desc-vers {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .mob-vers {
+                display: none;
+            } 
+        }
+    }
+}

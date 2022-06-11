@@ -1,0 +1,157 @@
+footer{
+    .main-footer{
+        background: url('../img/back-footer.png') no-repeat;
+        background-size: cover;
+        .all-footer{
+            display: flex;
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 11px;
+            a{
+                font-size: 18px;
+                color: #000000;
+                display: block;
+            }
+            .logo{
+                text-align: center;
+                img {
+                    width: 104px;
+                    height: 104px;
+                }
+            }
+            .all-links{
+                display: flex;
+                justify-content: space-between;
+                border-bottom:1px solid#7d78a0;
+                a{
+                    &:not(:last-child){
+                        margin-bottom: 14px;
+                    } 
+                    font-weight: 300;
+                }
+            }
+            .contacts{
+                padding-top: 31px;
+                padding-bottom: 45px;
+                a{
+                    display: flex;
+                    align-items: center;
+                    &:not(:last-child){
+                        margin-bottom: 18px;
+                    }
+                    img{
+                        margin-right: 17px;
+                    }
+                }
+            }
+            .social{
+                display: flex;
+                flex-wrap: wrap;
+                a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    &:not(:last-child){
+                        margin-right: 21px;
+                    }
+                    &:nth-child(3){
+                        margin-bottom: 13px;
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        &:not(:last-child){
+                            margin-right: 22px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .bottom-footer{
+        background:  #111111;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        h5{
+            font-size: 16px;
+            color: #ffffff;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    footer{
+        .main-footer{
+            .all-footer{
+                max-width: 1307px;
+                margin: 0 auto;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                .all-links{
+                    justify-content: center;
+                    border: none;
+                    .one-part{
+                        &:first-child{
+                            margin-right: 30px;
+                        }
+                    }
+                }
+                .contacts {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+                .social{
+                    max-width: 187px;
+                    a{
+                        &:not(:last-child){
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px){
+    footer{
+        .main-footer{
+            .all-footer{
+                .all-links{
+                    .one-part{
+                        &:first-child{
+                            margin-right: 117px;
+                        }
+                    }
+                }
+                .social{
+                    a{
+                        &:not(:last-child){
+                            margin-right: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1920px){
+    footer{
+        .main-footer{
+            .main-footer{
+                .social{
+                    a {
+                        &:not(:nth-child(3)){
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parfumery</title>
+    <meta name="cmsmagazine" content="5a7189a28fb3dc68238dbdb44c9ea99c" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/rezultSearch.css">
+</head>
+<body>
+
+<!-- build:section layout.header-->
+<!-- /build -->
+
+<main>
+    <div id="product-search" class="container">
+        <ul class="crumbs">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="javascript:void(0);">Поиск</a></li>
+        </ul>
+      <div class="row">
+                    <div id="content" class="col-sm-12">
+          <h1>Поиск - отл</h1>
+          <label class="control-label" for="input-search">Поиск:</label>
+          <div class="row">
+            <div class="col-sm-4">
+              <input type="text" name="search" value="отл" placeholder="Ключевые слова" id="input-search" class="form-control inpSearch">
+            </div>
+            <div class="col-sm-3">
+              <select name="category_id" class="form-control sort">
+                <option value="0">Все категории</option>
+                    <option value="61">Все товары</option>
+                    <option value="62">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Отливанты</option>
+                    <option value="59">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Туалетная вода</option>
+                    <option value="63">Подарочные упаковки</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="checkbox-inline">
+                <input type="checkbox" name="sub_category" value="1" disabled="">
+                Поиск в подкатегориях</label>
+            </div>
+          </div>
+          <p>
+            <label class="checkbox-inline">
+                        <input type="checkbox" name="description" value="1" id="description">
+                        Искать в описании товаров</label>
+          </p>
+          <input type="button" value="Поиск" id="button-search" class="btn btn-primary black-but">
+          <h2>Результаты поиска</h2>
+                <div class="row">
+            <div class="col-md-2 col-sm-6 hidden-xs">
+              <div class="btn-group btn-group-sm">
+                <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="Список"><i class="fa fa-th-list"></i></button>
+                <button type="button" id="grid-view" class="btn btn-default active" data-toggle="tooltip" title="Сетка"><i class="fa fa-th"></i></button>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-group">
+                <a href="http://parfum.plemya-demo.ru/index.php?route=product/compare" id="compare-total" class="btn btn-link">Сравнение товаров (0)</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <div class="form-group input-group input-group-sm">
+                <label class="input-group-addon" for="input-sort">Сортировка:</label>
+                <select id="input-sort" class="form-control" onchange="location = this.value;">
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=p.sort_order&amp;order=ASC&amp;search=%D0%BE%D1%82%D0%BB" selected="selected">По умолчанию</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=pd.name&amp;order=ASC&amp;search=%D0%BE%D1%82%D0%BB">Название (А - Я)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=pd.name&amp;order=DESC&amp;search=%D0%BE%D1%82%D0%BB">Название (Я - А)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=p.price&amp;order=ASC&amp;search=%D0%BE%D1%82%D0%BB">Цена (низкая &gt; высокая)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=p.price&amp;order=DESC&amp;search=%D0%BE%D1%82%D0%BB">Цена (высокая &gt; низкая)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=rating&amp;order=DESC&amp;search=%D0%BE%D1%82%D0%BB">Рейтинг (начиная с высокого)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=rating&amp;order=ASC&amp;search=%D0%BE%D1%82%D0%BB">Рейтинг (начиная с низкого)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=p.model&amp;order=ASC&amp;search=%D0%BE%D1%82%D0%BB">Модель (А - Я)</option>
+        <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;sort=p.model&amp;order=DESC&amp;search=%D0%BE%D1%82%D0%BB">Модель (Я - А)</option>
+                                </select>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+              <div class="form-group input-group input-group-sm">
+                <label class="input-group-addon" for="input-limit">Показать:</label>
+                <select id="input-limit" class="form-control" onchange="location = this.value;">
+    <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;search=%D0%BE%D1%82%D0%BB&amp;limit=15" selected="selected">15</option>
+                <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;search=%D0%BE%D1%82%D0%BB&amp;limit=25">25</option>
+                <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;search=%D0%BE%D1%82%D0%BB&amp;limit=50">50</option>
+                <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;search=%D0%BE%D1%82%D0%BB&amp;limit=75">75</option>
+                <option value="http://parfum.plemya-demo.ru/index.php?route=product/search&amp;search=%D0%BE%D1%82%D0%BB&amp;limit=100">100</option>
+</select>
+              </div>
+            </div>
+          </div>
+          <div class="cat-mob">
+            <div class="some-product-mob">
+                <div class="top-info-block">
+                    <div class="container-img">
+                        <img src="../img/card-first-porfum.png" alt="" class="img-product">
+                    </div>
+                    <div class="right-info">
+                        <h5 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h5>
+                        <div class="price">
+                            <div class="new-price"><h5>от 1 000 RUB</h5>
+                                <h5>до 15 000 RUB</h5></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-info">
+                    <button type="submit" class="black-but">Купить</button>
+                </div>
+            </div>
+            <div class="some-product-mob">
+                <div class="top-info-block">
+                    <div class="container-img">
+                        <img src="../img/card-second-porfum.png" alt="" class="img-product">
+                    </div>
+                    <div class="right-info">
+                        <h5 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h5>
+                        <div class="price">
+                            <div class="new-price"><h5>от 1 000 RUB</h5>
+                                <h5>до 15 000 RUB</h5></div>
+                        </div>
+                        </div>
+                    </div>
+
+                <div class="bottom-info">
+                    <button type="submit" class="black-but">Купить</button>
+                </div>
+            </div>
+            <div class="some-product-mob">
+                <div class="top-info-block">
+                    <div class="container-img">
+                        <img src="../img/card-third-porfum.png" alt="" class="img-product">
+                    </div>
+                    <div class="right-info">
+                        <h5 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h5>
+                        <div class="price">
+                            <div class="new-price"><h5>от 1 000 RUB</h5>
+                                <h5>до 15 000 RUB</h5></div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="bottom-info">
+                        <button type="submit" class="black-but">Купить</button>
+                    </div>
+                </div>
+                <div class="some-product-mob nan-tovaro-mob">
+                    <div class="top-info-block">
+                        <div class="container-img">
+                            <img src="../img/card-fourth-porfum.png" alt="" class="img-product">
+                        </div>
+                        <div class="right-info">
+                            <h5 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h5>
+                            <div class="price">
+                                <div class="new-price"><h5>от 1 000 RUB</h5>
+                                    <h5>до 15 000 RUB</h5></div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="some-nan-tovaro">
+                            <p>нет в наличии</p>
+                        </div>
+                    </div>
+        </div>
+        <div class="cat-desc">
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+            <div class="one-product-desc">
+                <div class="some-product">
+                    <div class="img-card" onclick="document.location.href='card-of-product.html'">
+                        <img src="../img/card-second-porfum.png" alt="" style="width: 116px;
+                        height: 262px;">
+                    </div>
+                    <div class="stars-likes">
+                        <div class="stars">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                            <img src="../img/star-img.png" alt="">
+                        </div>
+                        <a href="#">14 отзывов</a>
+                    </div>
+                    <h4 onclick="document.location.href='card-of-product.html'">Christian Dior Jadore</h4>
+                    <p>Туалетная вода</p>
+                    <div class="new-price"><h5>1 000 RUB</h5>
+                        <h5>-</h5>
+                        <h5>15 000 RUB</h5></div>
+                        <div class="bottom-info">
+                            <div class="top-info">
+                                <div class="sel-first">
+                                    <select>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                        <option>100 ML</option>
+                                    </select>
+                                </div>
+                                <div class="sel-sec">
+                                    <p>Кол-во:</p>
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fire"><img src="../img/fire.png" alt=""><p>Мой любимый удовый
+                                аромат</p></div>
+                        <div class="bottom-info">
+                            <button type="submit" class="black-but">в корзину</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+                </div>
+        </div>
+    </div>
+    </main>
+<!-- build:section layout.footer-->
+<!-- /build -->
+
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src="../js/main.min.js"></script>
+<script src="../js/all-some-products-slide.min.js"></script>
+</body>
+</html>
